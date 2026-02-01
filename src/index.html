@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Surfacing - An interactive visualization of undersea fiber-optic cables that support our global network society">
+    <title>Surfacing - Undersea Fiber-Optic Cable Visualization</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Interactive Map Canvas -->
+    <canvas id="mapCanvas"></canvas>
+
+    <!-- Information Panel -->
+    <div class="info-panel" id="infoPanel">
+        <button class="close-btn" id="closeBtn" aria-label="Close information panel">Close</button>
+        
+        <div class="panel-content">
+            <h1>Surfacing</h1>
+            
+            <div class="credits">
+                <p>by Nicole Starosielski, Erik Loyer, and Shane Brennan</p>
+                <p>Design and programming by Erik Loyer</p>
+                <p class="prototype-note">Prototype developed by Craig Dietrich</p>
+                <p class="additional-writing">Additional writing by Jessica Feldman and Anne Pasek</p>
+            </div>
+
+            <div class="description">
+                <p class="intro">
+                    Undersea fiber-optic cables are critical infrastructures that support our global network society. They carry 99% of all transoceanic digital communications, including:
+                </p>
+                
+                <ul class="communications-list">
+                    <li>phone calls,</li>
+                    <li>text messages,</li>
+                    <li>email,</li>
+                    <li>websites,</li>
+                    <li>digital images and video,</li>
+                    <li>and even some television.</li>
+                </ul>
+            </div>
+
+            <div class="instructions">
+                <p>Use the zoom controls to the right to see your current location from a new perspective. Click or drag on images, text, or the map to explore.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

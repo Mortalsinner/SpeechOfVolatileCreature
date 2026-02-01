@@ -1,0 +1,354 @@
+body {
+    margin: 0;
+    padding: 0;
+    transition: background-color 1s ease;
+}
+
+.test-controls {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.test-toggle {
+    padding: 10px 16px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    background-color: rgba(128, 128, 128, 0.3);
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.test-toggle:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.day-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.day-controls button {
+    padding: 8px 12px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    background-color: rgba(128, 128, 128, 0.3);
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    color: inherit;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.day-controls button:hover {
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+.day-indicator {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 11px;
+    padding: 0 8px;
+    color: inherit;
+}
+
+.surfacing-container {
+    font-family: 'Courier New', Courier, 'Lucida Console', Monaco, monospace;
+    min-height: 100vh;
+    padding: 40px 20px;
+    transition: background-color 1s ease, color 1s ease;
+}
+
+/* Night mode (default) */
+.surfacing-container.night {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.surfacing-container.night body {
+    background-color: #000000;
+}
+
+.surfacing-container.night .content-wrapper {
+    border-color: #333333;
+}
+
+.surfacing-container.night .content-wrapper:hover {
+    border-color: #555555;
+}
+
+.surfacing-container.night h1 {
+    color: #ffffff;
+}
+
+.surfacing-container.night h3 {
+    color: #888888;
+}
+
+.surfacing-container.night p {
+    color: #cccccc;
+}
+
+/* Day mode */
+.surfacing-container.day {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.surfacing-container.day body {
+    background-color: #ffffff;
+}
+
+.surfacing-container.day .content-wrapper {
+    border-color: #cccccc;
+}
+
+.surfacing-container.day .content-wrapper:hover {
+    border-color: #999999;
+}
+
+.surfacing-container.day h1 {
+    color: #000000;
+}
+
+.surfacing-container.day h3 {
+    color: #666666;
+}
+
+.surfacing-container.day p {
+    color: #333333;
+}
+
+.content-wrapper {
+    max-width: 700px;
+    width: 100%;
+    margin: 100px auto 0;
+    border: 1px solid;
+    padding: 48px;
+    background-color: transparent;
+    transition: border-color 0.3s ease;
+    position: relative;
+}
+
+.window-controls {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    pointer-events: none;
+    /* Make un-interactable */
+    user-select: none;
+}
+
+.close-x {
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.7;
+    transition: color 1s ease;
+}
+
+/* Inherit color from theme */
+.surfacing-container.day .close-x {
+    color: #000000;
+}
+
+.surfacing-container.night .close-x {
+    color: #ffffff;
+}
+
+.content-wrapper:hover {
+    border-color: inherit;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    margin: 0 0 32px 0;
+    line-height: 1.4;
+    transition: color 1s ease;
+}
+
+h3 {
+    font-size: 13px;
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    margin: 0 0 24px 0;
+    text-transform: uppercase;
+    transition: color 1s ease;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.8;
+    margin: 0;
+    white-space: pre-line;
+    transition: color 1s ease;
+    position: relative;
+}
+
+/* Blinking cursor effect */
+.content-wrapper p::after {
+    content: '█';
+    display: inline-block;
+    margin-left: 5px;
+    animation: blink 1s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Subtle selection styling */
+::selection {
+    background-color: #333333;
+    /* Darker selection for terminal feel */
+    color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .content-wrapper {
+        padding: 32px 24px;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-size: 12px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+/* Log Table */
+.log-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto 40px;
+    padding: 0 20px;
+}
+
+.log-title {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: color 1s ease;
+}
+
+.log-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid;
+    transition: border-color 1s ease;
+}
+
+.surfacing-container.day .log-table-wrapper {
+    border-color: #cccccc;
+}
+
+.surfacing-container.night .log-table-wrapper {
+    border-color: #333333;
+}
+
+.log-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+}
+
+.log-table th,
+.log-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px dotted;
+    transition: all 1s ease;
+}
+
+.surfacing-container.day .log-table th,
+.surfacing-container.day .log-table td {
+    border-color: #cccccc;
+}
+
+.surfacing-container.night .log-table th,
+.surfacing-container.night .log-table td {
+    border-color: #333333;
+}
+
+.log-table thead th {
+    font-weight: normal;
+    letter-spacing: 0.5px;
+    border-bottom-style: solid;
+}
+
+.surfacing-container.day .log-table thead th {
+    background-color: #f5f5f5;
+}
+
+.surfacing-container.night .log-table thead th {
+    background-color: #0a0a0a;
+}
+
+.log-table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.log-table tbody tr:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.log-table tbody tr.active-row {
+    background-color: rgba(128, 128, 128, 0.2);
+    font-weight: bold;
+}
+
+.log-table td:first-child {
+    width: 60px;
+    text-align: center;
+}
+
+.log-table td:nth-child(2) {
+    min-width: 300px;
+}
+
+.log-table td:nth-child(3),
+.log-table td:nth-child(4) {
+    width: 150px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .log-table {
+        font-size: 10px;
+    }
+
+    .log-table th,
+    .log-table td {
+        padding: 8px 10px;
+    }
+
+    .log-table td:nth-child(2) {
+        min-width: 200px;
+    }
+}
