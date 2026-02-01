@@ -350,15 +350,18 @@ p {
         align-items: center;
         width: 100%;
         margin-bottom: 20px;
-        background-color: rgba(0, 0, 0, 0.5);
-        /* Add semi-transparent background for readability */
-        padding: 10px;
-        box-sizing: border-box;
+        background-color: transparent;
+        /* Remove gray background */
+        padding: 0;
     }
 
     .test-toggle {
         width: 100%;
         margin-bottom: 10px;
+        background-color: transparent;
+        /* Transparent button bg */
+        border: 1px solid currentColor;
+        /* Use current text color for border */
     }
 
     .day-controls {
@@ -367,21 +370,27 @@ p {
         width: 100%;
     }
 
+    .day-controls button {
+        background-color: transparent;
+        border: 1px solid currentColor;
+    }
+
     /* Adjust main container padding */
     .surfacing-container {
-        padding: 20px 10px;
+        padding: 10px;
         display: flex;
         flex-direction: column;
+        min-height: 100vh;
+        box-sizing: border-box;
     }
 
     /* content wrapper adjustments */
     .content-wrapper {
-        margin: 20px auto 0;
-        /* Reduced top margin */
+        margin: 10px auto 0;
         padding: 24px 16px;
-        /* Reduced padding */
-        width: 95%;
-        /* Ensure it fits */
+        width: 100%;
+        box-sizing: border-box;
+        border-width: 1px;
     }
 
     .window-controls {
@@ -391,7 +400,6 @@ p {
 
     h1 {
         font-size: 20px;
-        /* Smaller title */
         margin-bottom: 20px;
         line-height: 1.3;
     }
@@ -403,14 +411,15 @@ p {
 
     p {
         font-size: 13px;
-        /* Smaller body text */
         line-height: 1.6;
     }
 
     /* Log table adjustments */
     .log-container {
         margin: 40px auto 20px;
-        padding: 0 10px;
+        padding: 0;
+        width: 100%;
+        overflow-x: hidden;
     }
 
     .log-title {
@@ -419,16 +428,15 @@ p {
 
     .log-table {
         font-size: 10px;
+        width: 100%;
     }
 
     .log-table th,
     .log-table td {
-        padding: 8px 6px;
-        /* Tighter table cell padding */
+        padding: 8px 4px;
     }
 
     .log-table td:nth-child(2) {
-        min-width: 180px;
-        /* Allow title column to shrink a bit more */
+        min-width: 150px;
     }
 }
