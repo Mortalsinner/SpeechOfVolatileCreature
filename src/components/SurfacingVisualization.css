@@ -14,6 +14,40 @@ body {
     z-index: 1000;
 }
 
+.site-logo {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 80px;
+    z-index: 1000;
+    filter: invert(1);
+    mix-blend-mode: difference;
+    pointer-events: none;
+}
+
+.minister-text {
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    font-family: monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    z-index: 100;
+    transition: color 1s ease;
+    text-align: right;
+    pointer-events: none;
+    user-select: none;
+}
+
+.surfacing-container.day .minister-text {
+    color: #000000;
+}
+
+.surfacing-container.night .minister-text {
+    color: #ffffff;
+}
+
 .test-toggle {
     padding: 10px 16px;
     font-family: 'Courier New', Courier, monospace;
@@ -62,12 +96,15 @@ body {
     min-height: 100vh;
     padding: 40px 20px;
     transition: background-color 1s ease, color 1s ease;
+    position: relative;
 }
 
 /* Night mode (default) */
 .surfacing-container.night {
     background-color: #000000;
     color: #ffffff;
+    background-image: radial-gradient(rgba(65, 65, 65, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
 .surfacing-container.night body {
@@ -98,6 +135,8 @@ body {
 .surfacing-container.day {
     background-color: #ffffff;
     color: #000000;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.15) 1px, transparent 1px);
+    background-size: 20px 20px;
 }
 
 .surfacing-container.day body {
@@ -343,6 +382,14 @@ p {
 @media (max-width: 768px) {
 
     /* Adjust test controls for mobile */
+    .site-logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 0 auto 20px;
+        display: block;
+    }
+
     .test-controls {
         position: relative;
         top: auto;
@@ -354,6 +401,16 @@ p {
         background-color: transparent;
         /* Remove gray background */
         padding: 0;
+    }
+
+    .minister-text {
+        position: relative;
+        top: auto;
+        right: auto;
+        text-align: center;
+        margin-bottom: 20px;
+        width: 100%;
+        font-size: 9px;
     }
 
     .test-toggle {

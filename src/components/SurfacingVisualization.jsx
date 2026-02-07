@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './SurfacingVisualization.css';
 import { contentData } from './contentData';
+import Logo from '../assets/Logo.svg';
 
 function SurfacingVisualization() {
     const [isDaytime, setIsDaytime] = useState(true);
@@ -71,6 +72,7 @@ function SurfacingVisualization() {
 
     return (
         <div className={`surfacing-container ${isDaytime ? 'day' : 'night'}`}>
+            <img src={Logo} className="site-logo" alt="Surfacing Logo" />
             <div className="test-controls">
                 {/* <button className="test-toggle" onClick={toggleDayNight}>
                     Toggle {isDaytime ? 'Night' : 'Day'} Mode
@@ -82,6 +84,11 @@ function SurfacingVisualization() {
                     <button onClick={resetToToday}>Reset to Today</button> */}
                 </div>
             </div>
+
+            <div className="minister-text">
+                ORCHESTRATED BY THE MINISTER OF ETERNITY
+            </div>
+
 
             <div className="content-wrapper">
                 <div className="window-controls">
