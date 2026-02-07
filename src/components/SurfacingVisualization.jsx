@@ -76,9 +76,9 @@ function SurfacingVisualization() {
                 <img src={Logo} className="site-logo" alt="Surfacing Logo" />
             </div>
             <div className="test-controls">
-                {/* <button className="test-toggle" onClick={toggleDayNight}>
+                <button className="test-toggle" onClick={toggleDayNight}>
                     Toggle {isDaytime ? 'Night' : 'Day'} Mode
-                </button> */}
+                </button>
                 <div className="day-controls">
                     {/* <button onClick={prevDay}>← Prev Day</button>
                     <span className="day-indicator">Day {currentIndex + 1}/{contentData.length}</span>
