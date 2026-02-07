@@ -72,7 +72,9 @@ function SurfacingVisualization() {
 
     return (
         <div className={`surfacing-container ${isDaytime ? 'day' : 'night'}`}>
-            <img src={Logo} className="site-logo" alt="Surfacing Logo" />
+            <div>
+                <img src={Logo} className="site-logo" alt="Surfacing Logo" />
+            </div>
             <div className="test-controls">
                 {/* <button className="test-toggle" onClick={toggleDayNight}>
                     Toggle {isDaytime ? 'Night' : 'Day'} Mode
