@@ -20,9 +20,12 @@ body {
     left: 30px;
     width: 80px;
     z-index: 1000;
-    filter: invert(1);
-    mix-blend-mode: difference;
+    transition: filter 1s ease;
     pointer-events: none;
+}
+
+.surfacing-container.night .site-logo {
+    filter: invert(1);
 }
 
 .minister-text {
